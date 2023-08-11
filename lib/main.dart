@@ -21,19 +21,22 @@ class _gameState extends State<game> {
 
         body: Container(
           padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage('image/background.png'),fit: BoxFit.cover)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SafeArea(
                 child: Expanded(
                   child: Container(
-
+                    //decoration: BoxDecoration(image: DecorationImage(image: AssetImage('image/background.png'),fit: BoxFit.cover)),
                     padding: EdgeInsets.all(20),
                     height: height/1.7,
                     width: width,
-                    child: Text('Story'),
+                    child: Text('Story', style: TextStyle(
+                      color: Colors.white
+                    ),),
 
-                    color: Colors.deepPurpleAccent,
+                    //color: Colors.deepPurpleAccent,
 
                   ),
                 ),
