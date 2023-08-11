@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-
-void main(){
-  runApp(
-    game()
-  );
+void main() {
+  runApp(game());
 }
 
 class game extends StatefulWidget {
@@ -17,25 +14,55 @@ class game extends StatefulWidget {
 class _gameState extends State<game> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return MaterialApp(
       home: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              child: Container(
-                child: Text('Story'),
-                color: Colors.deepPurpleAccent,
+            SafeArea(
+              child: Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  height: height/1.7,
+                  width: width,
+                  child: Text('Story'),
 
+                  color: Colors.deepPurpleAccent,
+                ),
               ),
-
-            ),Expanded(child: FilledButton(
-              onPressed: (){
+            ),
+            SizedBox(
+              height:height/50,
+            ),
+            Expanded(
+                child: FilledButton(
+              onPressed: () {
                 print('i am option 1');
               },
               child: Text('Option 1'),
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.green)),
             )),
+            SizedBox(
+              height:height/50,
+            ),
+            Expanded(
+                child: FilledButton(
 
-            Expanded(child: FilledButton(onPressed: (){print('i am option2');}, child: Text('Option 2')))
+                    onPressed: () {
+                      print('i am option2');
+                    },
+                    child: Text('Option 2'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+
+                ),
+
+                )),
+            SizedBox(
+              height: height/60,
+            )
           ],
         ),
       ),
