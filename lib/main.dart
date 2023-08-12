@@ -78,6 +78,14 @@ class _gameState extends State<game> {
 
                       onPressed: () {
                         print('i am option2');
+                        setState(() {
+                          if(stq.Storynumber()==0){
+                            stq.ChangeStoryNumber(1);
+                          }
+                          else if(stq.Storynumber()==1){
+                            stq.ChangeStoryNumber(3);
+                          }
+                        });
                       },
                       child: Text(stq.GetChoice2(), style: TextStyle(color: Colors.white),),
                   style: ButtonStyle(
