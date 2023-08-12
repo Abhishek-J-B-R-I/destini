@@ -27,16 +27,19 @@ class _gameState extends State<game> {
           decoration: BoxDecoration(image: DecorationImage(image: AssetImage('image/background.png'),fit: BoxFit.cover)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+
             children: [
               SafeArea(
                 child: Expanded(
                   child: Container(
+                    margin: EdgeInsets.only(top: 100),
                     //decoration: BoxDecoration(image: DecorationImage(image: AssetImage('image/background.png'),fit: BoxFit.cover)),
                     padding: EdgeInsets.all(20),
                     height: height/1.7,
                     width: width,
                     child: Text(stq.GetStory(), style: TextStyle(
-                      color: Colors.white
+                      color: Colors.white,
+                      fontSize: 20
                     ),),
 
                     //color: Colors.deepPurpleAccent,
@@ -76,13 +79,13 @@ class _gameState extends State<game> {
               )),
               SizedBox(
                 //height:height/6,
-                //height: height/50,
-                height: height/stq.RedButtonSize(),
+                height: height/50,
+                //height: height/stq.RedButtonSize(),
               ),
-              Visibility(
-                visible: stq.visii(),
-                child: Expanded(
-                  flex: 2,
+              Expanded(
+                flex: 2,
+                  child: Visibility(
+                    visible: stq.visii(),
                     child: TextButton(
 
                         onPressed: () {
@@ -104,8 +107,8 @@ class _gameState extends State<game> {
 
                     ),
 
-                    )),
-              ),
+                    ),
+                  )),
               SizedBox(
                 height: height/60,
               )

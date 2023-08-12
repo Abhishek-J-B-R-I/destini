@@ -71,7 +71,7 @@ class Storyquiz {
       return true;
     }
   }
-
+/*
   int RedButtonSize(){
     if(_i==5 || _i==4 || _i==3){
       return 6;
@@ -80,5 +80,6 @@ class Storyquiz {
       return 50;
     }
   }
+*/
 
 }
