@@ -48,6 +48,7 @@ class _gameState extends State<game> {
                 height:height/50,
               ),
               Expanded(
+                flex: 2,
                   child: TextButton(
                 onPressed: () {
                   setState(() {
@@ -61,6 +62,9 @@ class _gameState extends State<game> {
                     else if(stq.Storynumber()==1){
                       stq.ChangeStoryNumber(2);
                     }
+                    else if(stq.Storynumber()==5){
+                      stq.Resetapp();
+                    }
                   });
                   print('i am option 1');
 
@@ -71,29 +75,37 @@ class _gameState extends State<game> {
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
               )),
               SizedBox(
-                height:height/50,
+                //height:height/6,
+                //height: height/50,
+                height: height/stq.RedButtonSize(),
               ),
-              Expanded(
-                  child: TextButton(
+              Visibility(
+                visible: stq.visii(),
+                child: Expanded(
+                  flex: 2,
+                    child: TextButton(
 
-                      onPressed: () {
-                        print('i am option2');
-                        setState(() {
-                          if(stq.Storynumber()==0){
-                            stq.ChangeStoryNumber(1);
-                          }
-                          else if(stq.Storynumber()==1){
-                            stq.ChangeStoryNumber(3);
-                          }
-                        });
-                      },
-                      child: Text(stq.GetChoice2(), style: TextStyle(color: Colors.white),),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blueAccent.shade400),
+                        onPressed: () {
+                          print('i am option2');
+                          setState(() {
+                            if(stq.Storynumber()==0){
+                              stq.ChangeStoryNumber(1);
+                            }
+                            else if(stq.Storynumber()==1){
+                              stq.ChangeStoryNumber(3);
+                            }
 
-                  ),
+                            //TODO use else if set if story number 4 and 3 then reset
+                          });
+                        },
+                        child: Text(stq.GetChoice2(), style: TextStyle(color: Colors.white),),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blueAccent.shade400),
 
-                  )),
+                    ),
+
+                    )),
+              ),
               SizedBox(
                 height: height/60,
               )

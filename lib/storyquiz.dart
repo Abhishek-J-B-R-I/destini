@@ -55,4 +55,30 @@ class Storyquiz {
     return _storyquiz[_i].choice2;
   }
 
+  int Resetapp(){
+    _i=0;
+    return _i;
+  }
+
+  bool visii(){
+    if(_i==5 || _i==4 || _i==3){
+      return false;
+    }
+    else if(_i==0 || _i==2 || _i==1){
+      return true;
+    }
+    else{
+      return true;
+    }
+  }
+
+  int RedButtonSize(){
+    if(_i==5 || _i==4 || _i==3){
+      return 6;
+    }
+    else{
+      return 50;
+    }
+  }
+
 }
