@@ -2,8 +2,8 @@
 
 import 'Story.dart';
 
-class _Storyquiz {
-  int i=0;
+class Storyquiz {
+  int _i=0;
   List<Story> _storyquiz = [
     Story(
         story:
@@ -37,18 +37,22 @@ class _Storyquiz {
   ];
 
   int Storynumber(){
-    i++;
-    return i;
+
+    return _i;
+  }
+  int ChangeStoryNumber(int j){
+    _i=j;
+    return _i;
   }
   String GetStory(){
-    return _storyquiz[i].story;
+    return _storyquiz[_i].story;
   }
   String GetChoice1(){
-    return _storyquiz[i].choice1;
+    return _storyquiz[_i].choice1;
   }
 
   String GetChoice2(){
-    return _storyquiz[i].choice2;
+    return _storyquiz[_i].choice2;
   }
 
 }

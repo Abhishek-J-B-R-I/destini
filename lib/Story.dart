@@ -3,5 +3,5 @@ class Story{
   late String choice1;
   late String choice2;
 
-  Story({String? story, String? choice1, String? choice2});
+  Story({ required this.story,  required this.choice1,  required this.choice2});
 }

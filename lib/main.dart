@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'storyquiz.dart';
 void main() {
   runApp(game());
 }
@@ -12,10 +12,13 @@ class game extends StatefulWidget {
 }
 
 class _gameState extends State<game> {
+  Storyquiz stq= Storyquiz();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+
+
     return MaterialApp(
       home: Scaffold(
 
@@ -32,7 +35,7 @@ class _gameState extends State<game> {
                     padding: EdgeInsets.all(20),
                     height: height/1.7,
                     width: width,
-                    child: Text('Story', style: TextStyle(
+                    child: Text(stq.GetStory(), style: TextStyle(
                       color: Colors.white
                     ),),
 
@@ -47,9 +50,22 @@ class _gameState extends State<game> {
               Expanded(
                   child: TextButton(
                 onPressed: () {
+                  setState(() {
+                    if (stq.Storynumber()==0){
+                      stq.ChangeStoryNumber(2);
+
+                    }
+                    else if(stq.Storynumber()==2){
+                      stq.ChangeStoryNumber(5);
+                    }
+                    else if(stq.Storynumber()==1){
+                      stq.ChangeStoryNumber(2);
+                    }
+                  });
                   print('i am option 1');
+
                 },
-                child: Text('Option 1',style: TextStyle(
+                child: Text(stq.GetChoice1(),style: TextStyle(
                   color: Colors.white
                 ),),
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
@@ -63,7 +79,7 @@ class _gameState extends State<game> {
                       onPressed: () {
                         print('i am option2');
                       },
-                      child: Text('Option 2', style: TextStyle(color: Colors.white),),
+                      child: Text(stq.GetChoice2(), style: TextStyle(color: Colors.white),),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.blueAccent.shade400),
 
