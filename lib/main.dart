@@ -65,9 +65,10 @@ class _gameState extends State<game> {
                     else if(stq.Storynumber()==1){
                       stq.ChangeStoryNumber(2);
                     }
-                    else if(stq.Storynumber()==5){
+                    else if(stq.Storynumber()==5 || stq.Storynumber()==4 || stq.Storynumber()==3){
                       stq.Resetapp();
                     }
+
                   });
                   print('i am option 1');
 
@@ -97,6 +98,7 @@ class _gameState extends State<game> {
                             else if(stq.Storynumber()==1){
                               stq.ChangeStoryNumber(3);
                             }
+
 
                             //TODO use else if set if story number 4 and 3 then reset
                           });
